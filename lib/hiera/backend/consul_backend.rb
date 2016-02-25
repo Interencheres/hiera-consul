@@ -88,7 +88,7 @@ class Hiera
             res_array.each { |key|
               if key.include? 'Value'
                 poney = "[hiera-consul]: IN MY LOOP value is #{key['Value']}"
-                Hiera.debug(poney)
+                Hiera.debug(Base64.decode64(poney))
                 answer.push(Base64.decode64(key['Value']))
               end
             }
