@@ -84,10 +84,10 @@ class Hiera
           res_array = JSON.parse(res)
           # See if we are a k/v return or a catalog return
           #if res_array.length > 0
-            res_array.each { |res|
-              if res.include? 'Value'
-                Hiera.debug("[hiera-consul]: res['Value']")
-                answer.push(Base64.decode64(res['Value']))
+            res_array.each { |key|
+              if key.include? 'Value'
+                Hiera.debug("[hiera-consul]: IN MY LOOP")
+                answer.push(Base64.decode64(key['Value']))
               end
             }
           else
