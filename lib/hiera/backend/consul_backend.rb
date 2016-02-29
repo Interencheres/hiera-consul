@@ -92,6 +92,7 @@ class Hiera
           else
             Hiera.debug("[hiera-consul]: Jumped as array empty")
           end
+          Hiera.debug(answer)
           return answer
       end
 
