@@ -87,9 +87,6 @@ class Hiera
           if res_array.length > 0
             res_array.each { |key|
               if key.include? 'Value'
-                Hiera.debug("[hiera-consul]: BONJOUR NOUNOURS")
-                poney = Base64.decode64(key['Value'])
-                Hiera.debug("[hiera-consul]: #{poney}")
                 answer.push(Base64.decode64(key['Value']))
               end
             }
