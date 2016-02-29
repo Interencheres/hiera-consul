@@ -74,7 +74,6 @@ class Hiera
       end
 
       def parse_result(res)
-        Hiera.debug("[hiera-consul]: COUCOU HIBOU")
           require 'base64'
           answer = []
           if res == "null"

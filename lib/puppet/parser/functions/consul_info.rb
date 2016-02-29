@@ -35,6 +35,7 @@ Parse the incoming consul info and return a value
       debug ("consul_info() :: Data is an array")
       myreturn = []
       data.each do |mydata|
+        debug("consul-info() :: Data is #{mydata}")
         myendstring = ""
         field_iterator.each do |myfield|
           myendstring << "#{mydata[myfield]}#{separator}"
