@@ -84,7 +84,7 @@ class Hiera
           # Consul always returns an array
           res_array = JSON.parse(res)
           # See if we are a k/v return or a catalog return
-          #if res_array.length > 0
+          if res_array.length > 0
             res_array.each { |key|
               if key.include? 'Value'
                 Hiera.debug("[hiera-consul]: BONJOUR NOUNOURS")
@@ -95,7 +95,7 @@ class Hiera
             }
           else
             Hiera.debug("[hiera-consul]: Jumped as array empty")
-          #end
+          end
           return answer
       end
 
